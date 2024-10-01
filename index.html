@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business site - David Xourmout</title>
+    <style>
+        body {
+            background-color: black;
+            color: purple;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+        
+        .hidden {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        
+        .fade-in {
+            opacity: 1;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 20px; /* Smooth rounded corners */
+            margin: 20px auto; /* Center images horizontally and add spacing */
+            display: block; /* Ensures images don't overflow the screen */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text1">Welcome to the Fade-In Example</h1>
+        <img id="image1" class="hidden" src="image1.jpg" alt="Image 1">
+        
+        <h1 class="text2 hidden">Here’s Another Image!</h1>
+        <img id="image2" class="hidden" src="image2.jpg" alt="Image 2">
+    </div>
+
+    <script>
+        // Function to add fade-in class after delay
+        function fadeInElement(element, delay) {
+            setTimeout(() => {
+                element.classList.add('fade-in');
+            }, delay);
+        }
+
+        // Wait 1 second then fade in the first image
+        fadeInElement(document.getElementById('image1'), 1000);
+
+        // Wait 2 seconds then show the second text and image
+        fadeInElement(document.querySelector('.text2'), 2000);
+        fadeInElement(document.getElementById('image2'), 2000);
+    </script>
+
+</body>
+</html>
